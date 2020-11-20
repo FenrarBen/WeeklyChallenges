@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ChallengesWithTestsMark8
 {
@@ -55,7 +56,14 @@ namespace ChallengesWithTestsMark8
 
         public double SumOfMinAndMax(IEnumerable<double> numbers)
         {
-            throw new NotImplementedException();
+            if (numbers != null && numbers.Count() != 0)
+            {
+                var min = numbers.Min();
+                var max = numbers.Max();
+                return min + max;
+            }
+
+            return 0;
         }
 
         public int GetLengthOfShortestString(string str1, string str2)
@@ -122,7 +130,12 @@ namespace ChallengesWithTestsMark8
 
         public long CountOfPositiveOddsBelowNumber(long number)
         {
-            throw new NotImplementedException();
+            if (number <= 0)
+            {
+                return 0;
+            }
+
+            return number / 2;
         }
     }
 }
